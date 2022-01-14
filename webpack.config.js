@@ -116,6 +116,15 @@ const config = {
                 }
             ]
         }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, `${srcRelativePath}/assets/model`),
+                    to: 'model/[name][ext]',
+                    noErrorOnMissing: true,
+                }
+            ]
+        }),
         new ImageminWebpWebpackPlugin({
             config: [{
                 test: /\.(jpe?g|png)$/i,
